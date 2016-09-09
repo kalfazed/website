@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Fixstars Log System</title>
+  </head>
+  <body>
+  <h1>Testcases Member Demo<% if (typeof username !== 'undefined') { %> - Welcome <%=
+      username %><% } %></h1>
+      <script type = "text/javascript">
+        var times = <%=times%>;
+        var testId = <%-JSON.stringify(testId)%>;
+        var testcasesId = <%-JSON.stringify(testcasesId)%>;
+        var testcasesName = <%-JSON.stringify(testcasesName)%>;
+
+        var testcases_id="testcases_id";
+
+        for(var i=0; i<times; i++){
+            testcases_id = testcases_id + i;
+
+            document.write('<form action="testcases/'+testcasesId[i]+'/delete" method="get">');
+            document.write('<a id="'+testcases_id+'" href="http://192.168.130.90:8080/tests/'+testId+'/testcases/'+testcasesId[i]+'/cycles"></a>');
+            document.write('<input type=submit value=delete>');
+            document.write('</form>');
+
+            var content = document.getElementById(testcases_id);
+            content.innerHTML=testcasesName[i];
+
+        }
+        document.write('<form action="testcases/'+testcasesId[i]+'/logs" method="get">');
+        document.write('<input type=submit value=logs>');
+        document.write('</form>');
+      </script>
+    </table>
+  </body>
+</html>

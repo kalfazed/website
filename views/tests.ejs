@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Fixstars Log System</title>
+  </head>
+  <body>
+  <h1>Tests Member Demo<% if (typeof username !== 'undefined') { %> - Welcome <%=
+      username %><% } %></h1>
+      <script type = "text/javascript">
+        var times = <%=times%>;
+        var testId = <%-JSON.stringify(testId)%>;
+        var testName = <%-JSON.stringify(testName)%>;
+
+        var test_id="test_id";
+
+        for(var i=0; i<times; i++){
+            test_id = test_id + i;
+
+            document.write('<form action="tests/'+testId[i]+'/delete" method="get">');
+            document.write('<a id="'+test_id+'" href="http://192.168.130.90:8080/tests/'+testId[i]+'/testcases"></a>');
+            document.write('<input type=submit value=delete>')
+            document.write('</form>');
+
+            var content = document.getElementById(test_id);
+            content.innerHTML=testName[i];
+
+        }
+      </script>
+    </table>
+  </body>
+</html>

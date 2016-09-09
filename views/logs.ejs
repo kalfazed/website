@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Fixstars Log System</title>
+  </head>
+  <body>
+  <h1>Log Member Demo<% if (typeof username !== 'undefined') { %> - Welcome <%=
+      username %><% } %></h1>
+      <script type = "text/javascript">
+        var times = <%=times%>;
+        var testId = <%-JSON.stringify(testId)%>;
+
+        var logName = <%-JSON.stringify(logName)%>;
+        var logId = <%-JSON.stringify(logId)%>;
+
+        var log_id="log_id";
+
+        for(var i=0; i<times; i++){
+            log_id = log_id + i;
+
+            document.write('<form action="logs/'+logId[i]+'/delete" method="get">');
+            document.write('<a id="'+log_id+'" href="http://192.168.130.90:8000/api/containers/'+testId+'/download/'+logName[i]+'"></a>');
+//            document.write('<input type=submit value=delete>')
+            document.write('</form>');
+
+            var content = document.getElementById(log_id);
+            content.innerHTML=logName[i];
+
+        }
+      </script>
+    </table>
+  </body>
+</html>

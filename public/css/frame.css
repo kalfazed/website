@@ -1,0 +1,55 @@
+#header{ 
+width: 80%; 
+height: 90px; 
+margin: 0 auto; 
+padding: 25px 15px 25px 15px;
+background: #f60;
+}
+
+#container{ 
+width: 80%; 
+height:700px; 
+margin: 0 auto;
+padding: 25px 15px 25px 15px;
+}
+
+#aside{ 
+float: left; 
+width: 240px;
+height:100%; 
+background: #ccc;
+padding: 25px 15px 25px 15px;
+}
+
+#content{ 
+margin-left: 240px;
+height:100%;
+padding: 25px 15px 25px 15px;
+}
+
+#main{ 
+float: left; 
+width: 100%; 
+background: pink;
+padding: 25px 15px 25px 15px;
+}
+
+#main .inner{ 
+padding-right: 200px;
+}
+
+#content-aside{ 
+float: left; 
+width: 200px; 
+margin-left: -200px; 
+background: orange; 
+padding: 25px 15px 25px 15px;
+}
+
+#footer{ 
+width: 80%; 
+height: 90px; 
+margin: 0 auto; 
+background: #08f;
+padding: 25px 15px 25px 15px;
+}

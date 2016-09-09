@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>LoopBack example access control</title>
+  </head>
+  <body>
+  <h1>Group Member Demo<% if (typeof username !== 'undefined') { %> - Welcome <%=
+      username %><% } %></h1>
+    <table border=1 cellpadding=5>
+      <tr>
+        <th>GroupName</th>
+        <th>GroupId</th>
+        <th>Status</th>
+        <th>Delete</th>
+      </tr>
+      <script type = "text/javascript">
+        var Times = <%=times%>
+        console.log(Times.length)
+        for(var i=1; i<=Times.length; i++){
+            document.write('<tr>');
+            document.write('<td>tmp</td>');
+            document.write('<td>tmp</td>');
+            document.write('<td>tmp</td>');
+            document.write('<td>tmp</td>');
+            document.write('</tr>');
+        }
+      </script>
+    </table>
+  </body>
+</html>

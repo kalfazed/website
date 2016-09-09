@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Fixstars Log System</title>
+  </head>
+  <body>
+  <h1>Cycle Member Demo<% if (typeof username !== 'undefined') { %> - Welcome <%=
+      username %><% } %></h1>
+      <script type = "text/javascript">
+        var times = <%=times%>;
+        var testId = <%-JSON.stringify(testId)%>;
+        var testcaseId = <%-JSON.stringify(testcaseId)%>;
+
+        var cycleName = <%-JSON.stringify(cycleName)%>;
+        var cycleId = <%-JSON.stringify(cycleId)%>;
+
+        var cycle_id="cycle_id";
+
+        for(var i=0; i<times; i++){
+            cycle_id = cycle_id + i;
+
+            document.write('<form action="cycles/'+cycleId[i]+'/delete" method="get">');
+            document.write('<a id="'+cycle_id+'" href="http://192.168.130.90:8080/tests/'+testId+'/testcases/'+testcaseId+'/cycles/'+cycleId[i]+'/logs"></a>');
+            document.write('<input type=submit value=delete>')
+            document.write('</form>');
+
+            var content = document.getElementById(cycle_id);
+            content.innerHTML="cycle "+cycleName[i];
+
+        }
+        document.write('<form action="logs" method="get">');
+        document.write('<input type=submit value=logs>');
+        document.write('</form>');
+      </script>
+    </table>
+  </body>
+</html>
